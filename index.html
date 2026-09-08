@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> بسه انتظار... 💗</title>
+
+<style>
+
+body {
+margin: 0;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: Tahoma, Arial;
+background: linear-gradient(135deg, #cfd8dc, #a8d8ef);
+.card {
+width: 350px;
+padding: 40px 25px;
+text-align: center;
+background: white;
+border-radius: 30px;
+box-shadow: 0 15px 40px #d99ab5;
+}
+
+.emoji {
+font-size: 50px;
+}
+
+h1 {
+margin: 20px 0;
+}
+
+p {
+color: #8b6070;
+}
+
+button {
+border: none;
+padding: 15px 30px;
+margin: 10px;
+border-radius: 30px;
+font-size: 16px;
+cursor: pointer;
+}
+
+#yes {
+background: #df3978;
+color: white;
+}
+
+#no {
+background: white;
+border: 1px solid #ddd;
+}
+
+#result {
+display: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="question">
+
+<div class="emoji">🥺</div>
+
+<h1>هورنی من با من میای سر قرار؟</h1>
+
+<p>
+حالا ک اینهمه وقت از دست دادیمم...<br>
+</p>
+
+<button id="yes">آره 💗</button>
+
+<button id="no">نه 😐</button>
+
+</div>
+
+<div id="result">
+
+<div class="emoji">🥰</div>
+
+<h1>یــــس! 💗</h1>
+
+<p>
+می‌دونستم شاید لجبازی و مودی ولی دوسم داری ! 😌
+<br>
+دارم میامم محلتون حاضر شوو ✨
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
+
+const questionTitle = document.querySelector("#question h1");
+
+let noStep = 0;
+
+// دکمه آره
+yesButton.onclick = function() {
+
+document.getElementById("question").style.display = "none";
+document.getElementById("result").style.display = "block";
+
+};
+
+// واکنش‌های دکمه نه
+noButton.onclick = function() {
+
+noStep++;
+
+if (noStep === 1) {
+
+questionTitle.innerText = "ببعی جونمم؟ 🥹";
+noButton.innerText = "حالا ناز نکن 😏";
+
+}
+
+else if (noStep === 2) {
+
+questionTitle.innerText = "دی‌ماهیِ بی‌تابِ من؟ 🥺";
+noButton.innerText = "نازتم می‌خرم 🥹";
+
+}
+
+else if (noStep === 3) {
+
+questionTitle.innerText = "فرفریِ سیگاریی 😭";
+noButton.innerText = "کوتاه بیا دیگه";
+
+}
+
+else if (noStep === 4) {
+
+questionTitle.innerText = "به خداحافظی تلخ تو سوگند... 🥲";
+noButton.innerText = "دیگه فایده نداره";
+
+}
+
+else if (noStep === 5) {
+
+noButton.style.display = "none";
+
+}
+
+};
+
+</script>
+</body>
+
+</html>
